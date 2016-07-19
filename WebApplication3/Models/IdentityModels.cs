@@ -29,5 +29,9 @@ namespace WebApplication3.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<WebApplication3.Models.Product> Products { get; set; }
+
+        public System.Data.Entity.DbSet<WebApplication3.Models.Category> Categories { get; set; }
     }
 }
