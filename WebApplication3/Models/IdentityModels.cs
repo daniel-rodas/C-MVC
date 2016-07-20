@@ -1,5 +1,4 @@
-﻿using System.Data.Entity;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -29,9 +28,9 @@ namespace WebApplication3.Models
         {
             return new ApplicationDbContext();
         }
+        
+        //public DbSet<Product> Products { get; set; }
 
-        public System.Data.Entity.DbSet<WebApplication3.Models.Product> Products { get; set; }
-
-        public System.Data.Entity.DbSet<WebApplication3.Models.Category> Categories { get; set; }
+        //public DbSet<Category> Categories { get; set; }
     }
 }

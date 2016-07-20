@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -9,17 +7,16 @@ using System.Web.Mvc;
 using WebApplication3.Models;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace WebApplication3.Controllers
 {
     public class ProductController : Controller
     {
-        private DbContext db = new DbContext();
-
-        // GET: Products
+               // GET: Products
         public ActionResult Index()
         {
-            var products = db.Products.Include(p => p.Category);
-            return View(products.ToList());
+            
+            return View();
         }
 
         // GET: Products/Details/5
@@ -29,18 +26,14 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            return View(product);
+
+            return View();
         }
 
         // GET: Products/Create
         public ActionResult Create()
         {
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "DisplayName");
+            
             return View();
         }
 
@@ -53,13 +46,12 @@ namespace WebApplication3.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Products.Add(product);
-                db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "DisplayName", product.CategoryId);
-            return View(product);
+
+            return View();
         }
 
         // GET: Products/Edit/5
@@ -69,13 +61,8 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "DisplayName", product.CategoryId);
-            return View(product);
+
+            return View();
         }
 
         // POST: Products/Edit/5
@@ -87,12 +74,10 @@ namespace WebApplication3.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "DisplayName", product.CategoryId);
-            return View(product);
+            return View();
         }
 
         // GET: Products/Delete/5
@@ -102,12 +87,8 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            return View(product);
+
+            return View();
         }
 
         // POST: Products/Delete/5
@@ -115,9 +96,7 @@ namespace WebApplication3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Product product = db.Products.Find(id);
-            db.Products.Remove(product);
-            db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 
@@ -125,7 +104,7 @@ namespace WebApplication3.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+
             }
             base.Dispose(disposing);
         }
