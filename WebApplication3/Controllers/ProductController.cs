@@ -1,22 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net;
-using System.Web;
+using System.Linq;
 using System.Web.Mvc;
 using WebApplication3.Models;
-using Microsoft.EntityFrameworkCore;
+using System.Data;
+using System.Data.Entity;
 
 
 namespace WebApplication3.Controllers
 {
     public class ProductController : Controller
     {
-               // GET: Products
+        // GET: Products
         public ActionResult Index()
         {
-            
-            return View();
+            var model = new Product
+            {
+                DisplayName = "Franky J",
+                MSRP = 40.44m,
+                CurrentPrice = 23.59m,
+                ProductId = 1
+            };
+            var db = new ProductContext();
+            db.Products.Add(model);
+            db.SaveChanges();
+            List<Product> viewModelList = new List<Product>();
+            viewModelList.Add(model);
+            return View(viewModelList);
         }
 
         // GET: Products/Details/5
