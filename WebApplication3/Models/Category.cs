@@ -12,6 +12,6 @@ namespace WebApplication3.Models
         public string DisplayName { get; set; }
         public string Slug { get; set; }
 
-        public List<Product> Products { get; set; }
+        public virtual List<Product> Products { get; set; }
     }
 }
