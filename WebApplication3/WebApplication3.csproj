@@ -259,6 +259,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607210129133_InitialCreate.cs" />
+    <Compile Include="Migrations\201607210129133_InitialCreate.Designer.cs">
+      <DependentUpon>201607210129133_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607210336174_AddSlug.cs" />
+    <Compile Include="Migrations\201607210336174_AddSlug.Designer.cs">
+      <DependentUpon>201607210336174_AddSlug.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -293,7 +301,6 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="App.config" />
     <None Include="Properties\PublishProfiles\rodasmvc.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
@@ -362,6 +369,14 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607210129133_InitialCreate.resx">
+      <DependentUpon>201607210129133_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607210336174_AddSlug.resx">
+      <DependentUpon>201607210336174_AddSlug.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

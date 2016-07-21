@@ -10,6 +10,7 @@ namespace WebApplication3.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            ContextKey = "WebApplication3.Models.ProductContext";
         }
 
         protected override void Seed(WebApplication3.Models.ProductContext context)

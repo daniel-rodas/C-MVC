@@ -7,6 +7,11 @@ namespace WebApplication3.Models
 {
     public class ProductContext : DbContext
     {
+        public ProductContext() : base("DefaultConnection")
+        {
+
+        }
+
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
 

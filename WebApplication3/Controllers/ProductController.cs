@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Net;
 using System.Linq;
+using System.Text;
 using System.Web.Mvc;
 using WebApplication3.Models;
 using System.Data;
@@ -14,19 +15,8 @@ namespace WebApplication3.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            var model = new Product
-            {
-                DisplayName = "Franky J",
-                MSRP = 40.44m,
-                CurrentPrice = 23.59m,
-                ProductId = 1
-            };
             var db = new ProductContext();
-            db.Products.Add(model);
-            db.SaveChanges();
-            List<Product> viewModelList = new List<Product>();
-            viewModelList.Add(model);
-            return View(viewModelList);
+            return View(db.Products);
         }
 
         // GET: Products/Details/5
@@ -36,8 +26,8 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            return View();
+            var db = new ProductContext();
+            return View(db.Products.Find(id));
         }
 
         // GET: Products/Create
@@ -71,8 +61,8 @@ namespace WebApplication3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            return View();
+            var db = new ProductContext();
+            return View(db.Products.Find(id));
         }
 
         // POST: Products/Edit/5

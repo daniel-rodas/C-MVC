@@ -10,6 +10,7 @@ namespace WebApplication3.Models
     {
         public string CategoryId { get; set; }
         public string DisplayName { get; set; }
+        public string Slug { get; set; }
 
         public List<Product> Products { get; set; }
     }

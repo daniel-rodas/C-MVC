@@ -11,6 +11,7 @@ namespace WebApplication3.Models
         public decimal MSRP { get; set; }
         public decimal CurrentPrice { set; get; }
         public string Url { get; set; }
+        public string Slug { get; set; }
 
         public string CategoryId { get; set; }
         public virtual Category Category { get; set; }
