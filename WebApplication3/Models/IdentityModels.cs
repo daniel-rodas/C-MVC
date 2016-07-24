@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 
 namespace WebApplication3.Models
 {
@@ -19,14 +20,24 @@ namespace WebApplication3.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        private string v;
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+        }
+
+        public ApplicationDbContext(string v)
+        {
+            this.v = v;
         }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

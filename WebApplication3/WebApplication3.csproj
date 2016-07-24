@@ -252,7 +252,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Content\CategoriesController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -260,13 +260,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607210129133_InitialCreate.cs" />
-    <Compile Include="Migrations\201607210129133_InitialCreate.Designer.cs">
-      <DependentUpon>201607210129133_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607210336174_AddSlug.cs" />
-    <Compile Include="Migrations\201607210336174_AddSlug.Designer.cs">
-      <DependentUpon>201607210336174_AddSlug.cs</DependentUpon>
+    <Compile Include="Migrations\201607220814039_\WebApplication3\Models\IdentityModels.cs.cs" />
+    <Compile Include="Migrations\201607220816543_WebApplication3.ApplicationDbContext.cs" />
+    <Compile Include="Migrations\201607220816543_WebApplication3.ApplicationDbContext.Designer.cs">
+      <DependentUpon>201607220816543_WebApplication3.ApplicationDbContext.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -320,7 +317,9 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -377,11 +376,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607210129133_InitialCreate.resx">
-      <DependentUpon>201607210129133_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607210336174_AddSlug.resx">
-      <DependentUpon>201607210336174_AddSlug.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607220816543_WebApplication3.ApplicationDbContext.resx">
+      <DependentUpon>201607220816543_WebApplication3.ApplicationDbContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
