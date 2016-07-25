@@ -11,20 +11,21 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Category.DisplayName)
+            Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisplayName)
+        </dd>
+        <dt>
+            
+            Category
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Category.DisplayName)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DisplayName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DisplayName)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.MSRP)
@@ -35,7 +36,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CurrentPrice)
+           Current Price
         </dt>
 
         <dd>

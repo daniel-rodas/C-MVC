@@ -3,7 +3,7 @@ namespace WebApplication3.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class WebApplication3ApplicationDbContext : DbMigration
+    public partial class WebApplication3ModelsApplicationDbContext : DbMigration
     {
         public override void Up()
         {
